@@ -4,10 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nika's DevOps Portfolio</title>
+
+    <style>
+        body {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .status {
+            padding: 12px;
+            border: 1px solid #999;
+            border-radius: 6px;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 5px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>DevOps Portfolio Project 1</h1>
-    <p>This website is running inside a Docker container.</p>
-    <p>Created by Nika.</p>
+    <h1>Nika's DevOps Portfolio</h1>
+
+    <p>
+        This website is served by Nginx inside a Docker container.
+    </p>
+
+    <div class="status">
+        <strong>Application status:</strong> Running
+    </div>
+
+    <h2>Technologies</h2>
+
+    <ul>
+        <li>Rocky Linux</li>
+        <li>Docker</li>
+        <li>Docker Compose</li>
+        <li>Nginx</li>
+        <li>Git and GitHub</li>
+    </ul>
+
+    <h2>Container Port</h2>
+
+    <p>
+        Host port <code>8080</code> forwards traffic to container port
+        <code>80</code>.
+    </p>
 </body>
 </html>
