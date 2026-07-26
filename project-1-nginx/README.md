@@ -1,29 +1,16 @@
-# Dockerized Nginx Web Application
-
-This is the first project in my DevOps portfolio.
-
-The project runs a static website inside an Nginx Docker container and
-uses Docker Compose to manage the application.
-
-## Technologies
-
-- Rocky Linux
-- Docker
-- Docker Compose
-- Nginx
-- HTML
-- Git
-
 ## Architecture
-
-Browser → Host port 8080 → Docker container port 80 → Nginx
-
-## Project Structure
-
+![CI Pipeline](https://github.com/nikagiqoshvili-debug/devops-portfolio/actions/workflows/ci.yaml/badge.svg)
 ```text
-.
-├── compose.yaml
-├── Dockerfile
-├── html
-│   └── index.html
-└── README.md
+Client
+  |
+  v
+Nginx container
+  |
+  v
+Python Flask API container
+  |
+  v
+PostgreSQL container
+  |
+  v
+Docker named volume
