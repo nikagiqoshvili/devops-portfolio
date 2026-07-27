@@ -6,3 +6,12 @@ __pycache__/
 **/__pycache__/
 .pytest_cache/
 **/.pytest_cache/
+# Terraform local files
+**/.terraform/
+**/*.tfstate
+**/*.tfstate.*
+**/crash.log
+**/crash.*.log
+**/*.tfvars
+**/*.tfvars.json
+project-2-terraform/terraform-demo.txt
