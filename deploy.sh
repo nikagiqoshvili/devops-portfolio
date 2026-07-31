@@ -20,8 +20,25 @@ git pull --ff-only
 echo "Building and starting containers..."
 docker compose up -d --build
 
-echo "Waiting for services..."
-sleep 10
+echo "Waiting for application to become ready..."
+
+MAX_ATTEMPTS=12
+ATTEMPT=1
+
+until curl --fail --silent "$APP_URL/health" > /dev/null; do
+    if [[ "$ATTEMPT" -ge "$MAX_ATTEMPTS" ]]; then
+        echo "ERROR: Application did not become ready in time."
+        docker compose ps
+        docker compose logs --tail=50
+        exit 1
+    fi
+
+    echo "Attempt $ATTEMPT/$MAX_ATTEMPTS: application is not ready yet..."
+    sleep 5
+    ATTEMPT=$((ATTEMPT + 1))
+done
+
+echo "Application is ready."
 
 echo "Checking containers..."
 docker compose ps
