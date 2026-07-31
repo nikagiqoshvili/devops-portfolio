@@ -36,12 +36,4 @@ output "network_security_group_name" {
   description = "Name of the application network security group"
   value       = azurerm_network_security_group.application.name
 }
-output "public_ip_address" {
-  description = "Public IPv4 address assigned to the future Linux VM"
-  value       = azurerm_public_ip.vm.ip_address
-}
 
-output "network_interface_id" {
-  description = "Azure resource ID of the Linux VM network interface"
-  value       = azurerm_network_interface.vm.id
-}
